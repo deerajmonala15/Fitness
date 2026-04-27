@@ -1,0 +1,355 @@
+.bodymodel-page {
+  padding-bottom: 32px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* ── Controls ── */
+.body-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 12px;
+  gap: 12px;
+}
+
+/* Gender toggle pill */
+.gender-toggle {
+  display: flex;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  border: 1px solid var(--border-light);
+  gap: 4px;
+}
+
+.gender-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.gender-btn .gender-icon {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.gender-btn.active {
+  background: var(--bg-card);
+  color: var(--accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* View toggle button */
+.view-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.view-toggle-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+/* View label pill */
+.view-label {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 16px;
+}
+
+.view-pill {
+  display: inline-block;
+  padding: 5px 14px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.3px;
+}
+
+/* ── Model content layout ── */
+.model-content {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Body map ── */
+.body-map-container {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  padding: 20px 20px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.body-image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.body-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* ── Hotspot dots ── */
+.muscle-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.dot-core {
+  position: relative;
+  z-index: 2;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: block;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.9), 0 2px 6px rgba(244, 63, 94, 0.45);
+  transition: all 0.2s ease;
+}
+
+.dot-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(244, 63, 94, 0.35);
+  animation: pulse-ring 2s ease-in-out infinite;
+  display: block;
+}
+
+.muscle-dot.active .dot-core {
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.95), 0 0 16px rgba(244, 63, 94, 0.5);
+}
+
+.muscle-dot.active .dot-ring {
+  border-color: var(--accent);
+  animation: none;
+  border-width: 2px;
+  inset: -2px;
+}
+
+.muscle-dot:hover .dot-core {
+  transform: scale(1.2);
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.85); opacity: 0.9; }
+  50%  { transform: scale(1.45); opacity: 0.2; }
+  100% { transform: scale(0.85); opacity: 0.9; }
+}
+
+/* ── Map legend ── */
+.map-legend {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.legend-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.lp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+.active-lp {
+  opacity: 1;
+  box-shadow: 0 0 6px var(--accent-glow);
+}
+
+/* ── Muscle Detail Card ── */
+.muscle-detail-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.mdc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--accent-subtle);
+}
+
+.mdc-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.mdc-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.mdc-title h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.mdc-title span {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.mdc-tip {
+  margin: 14px 20px 0;
+  padding: 10px 14px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-left: 3px solid var(--accent);
+}
+
+.mdc-exercises {
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mdc-section-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.mdc-exercise-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.mdc-exercise-row:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border);
+  transform: translateX(3px);
+}
+
+.mdc-ex-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mdc-ex-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mdc-ex-arrow {
+  color: var(--text-muted);
+}
+
+/* ── Empty state ── */
+.muscle-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 24px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-light);
+}
+
+.muscle-empty-state p {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+  max-width: 240px;
+  line-height: 1.5;
+}

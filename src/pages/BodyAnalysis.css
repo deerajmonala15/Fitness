@@ -1,0 +1,438 @@
+.body-analysis {
+  padding-bottom: 20px;
+}
+
+.body-content {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Upload Section */
+.upload-section {
+  padding: 40px 20px;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px dashed var(--border);
+  transition: all var(--transition-base);
+}
+
+.upload-section:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.upload-icon-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--accent-subtle);
+  border: 2px solid var(--accent-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  animation: float 3s ease-in-out infinite;
+}
+
+.upload-area h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.upload-area p {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.upload-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upload-actions .btn-primary,
+.upload-actions .btn-secondary {
+  width: 100%;
+  padding: 14px;
+}
+
+/* Analyzing State */
+.analyzing-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 0;
+}
+
+.analyze-loader {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-ring {
+  position: absolute;
+  inset: 0;
+  border: 4px solid var(--border-light);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader-icon {
+  color: var(--accent);
+}
+
+.analyzing-state h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.analyzing-state p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.analyze-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.analyze-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.step-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-light);
+}
+
+.analyze-step.done .step-dot {
+  background: var(--accent);
+}
+
+.analyze-step.done {
+  color: var(--text-primary);
+}
+
+.analyze-step.active .step-dot {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+.analyze-step.active {
+  color: var(--text-primary);
+}
+
+/* Analysis Results */
+.analysis-results {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.result-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Body Type Display */
+.body-type-display {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.body-silhouette {
+  width: 70px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.silhouette-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.sil-head {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.sil-torso {
+  width: 32px;
+  height: 36px;
+  border-radius: 8px 8px 4px 4px;
+  background: var(--accent);
+  opacity: 0.8;
+}
+
+.sil-legs {
+  display: flex;
+  gap: 6px;
+}
+
+.sil-legs::before,
+.sil-legs::after {
+  content: '';
+  width: 12px;
+  height: 32px;
+  border-radius: 4px;
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+.body-type-info h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.body-type-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* BMI Card */
+.bmi-display {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bmi-value-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.bmi-number {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.bmi-category {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.bmi-category[data-cat="underweight"] {
+  background: var(--yellow-glow);
+  color: var(--yellow);
+}
+
+.bmi-category[data-cat="normal"] {
+  background: var(--green-glow);
+  color: var(--green);
+}
+
+.bmi-category[data-cat="overweight"] {
+  background: var(--orange-glow);
+  color: var(--orange);
+}
+
+.bmi-category[data-cat="obese"] {
+  background: var(--red-glow);
+  color: var(--red);
+}
+
+.bmi-scale {
+  position: relative;
+  margin-top: 10px;
+}
+
+.bmi-zones {
+  display: flex;
+  height: 10px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  gap: 2px;
+}
+
+.bmi-zone {
+  flex: 1;
+  border-radius: var(--radius-full);
+}
+
+.bmi-zone.under { background: var(--yellow); }
+.bmi-zone.normal { background: var(--green); }
+.bmi-zone.over { background: var(--orange); }
+.bmi-zone.obese { background: var(--red); }
+
+.bmi-indicator {
+  position: absolute;
+  top: -4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 3px solid var(--text-primary);
+  transform: translateX(-50%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.bmi-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Body Stats Grid */
+.body-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.body-stat {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.body-stat-icon {
+  color: var(--accent);
+}
+
+.body-stat-val {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.body-stat-lbl {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Health Condition */
+.health-status {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.health-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-display);
+}
+
+.health-indicator.good {
+  color: var(--green);
+}
+
+.health-pulse {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+.health-status p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Goal Card */
+.goal-content h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.goal-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.goal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

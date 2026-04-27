@@ -1,0 +1,341 @@
+.fitness-page {
+  padding-bottom: 20px;
+}
+
+.fitness-content {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Tabs */
+.fitness-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px 16px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab.active {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.tab:not(.active):hover {
+  color: var(--text-secondary);
+  background: var(--bg-card-hover);
+  border-color: var(--border);
+}
+
+/* Steps Card */
+.steps-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 20px;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+}
+
+.steps-ring-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.steps-ring-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.02));
+}
+
+.steps-progress {
+  transition: stroke-dasharray 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.steps-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps-icon {
+  color: var(--cyan);
+  margin-bottom: 6px;
+}
+
+.steps-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.steps-goal {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.steps-details {
+  display: flex;
+  gap: 32px;
+}
+
+.step-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.step-detail-item svg {
+  color: var(--accent);
+}
+
+/* Burn Card */
+.burn-card {
+  padding: 24px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.burn-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.burn-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--orange-glow);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.burn-info {
+  flex: 1;
+}
+
+.burn-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: block;
+}
+
+.burn-values {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.burn-current {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.burn-goal {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.burn-split {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.burn-split-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bsi-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.bsi-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Weekly Chart */
+.weekly-card {
+  padding: 24px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.weekly-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 140px;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+.chart-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.chart-bar {
+  flex: 1;
+  width: 100%;
+  max-width: 32px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chart-fill {
+  background: linear-gradient(to top, var(--accent), var(--orange));
+  border-radius: var(--radius-sm);
+  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 4px;
+}
+
+.chart-day {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Workout Logs */
+.workout-logs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.workout-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-base);
+}
+
+.workout-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border);
+}
+
+.workout-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.workout-icon-wrap.purple { background: var(--purple-glow); color: var(--purple); }
+.workout-icon-wrap.red { background: var(--red-glow); color: var(--red); }
+.workout-icon-wrap.orange { background: var(--orange-glow); color: var(--orange); }
+.workout-icon-wrap.cyan { background: var(--cyan-glow); color: var(--cyan); }
+
+.workout-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.workout-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: block;
+}
+
+.workout-time {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.workout-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.ws-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.workout-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--green-glow);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
