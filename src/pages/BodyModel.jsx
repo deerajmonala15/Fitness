@@ -87,7 +87,7 @@ export default function BodyModel() {
   const [selected, setSelected] = useState(null)
 
   const spots = muscleSpots[gender][view]
-  const bodyImg = `/src/assets/${gender}-${view === 'anterior' ? 'front' : 'back'}.png`
+  const bodyImg = `/${gender}-${view === 'anterior' ? 'front' : 'back'}.png`
 
   const toggleView   = () => { setView(v => v === 'anterior' ? 'posterior' : 'anterior'); setSelected(null) }
   const pickGender   = g  => { setGender(g); setSelected(null) }
